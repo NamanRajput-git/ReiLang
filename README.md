@@ -12,6 +12,64 @@ ReiLang is a simple, Python-inspired interpreted programming language built in J
 - If-Else Conditionals
 
 ---
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/NamanRajput-git/ReiLang.git
+cd rei_lang
+```
+
+### 2. Build and Run
+
+Ensure you have **Java 11+**:
+
+```bash
+javac -d out src/rei/*.java
+java -cp out rei.Main
+```
+## ✍ Writing ReiLang Code in Java
+
+You can write ReiLang programs using:
+
+```java
+String source = String.join("\n",
+    "x = 10",
+    "y = 5",
+    "if x > y",
+    "print x",
+    "else",
+    "print y"
+);
+```
+
+Or, use Java 15+ text blocks:
+
+```java
+String source = """
+x = 10
+y = 5
+if x > y
+print x
+else
+print y
+""";
+```
+
+Then interpret:
+
+```java
+ReiLexer lexer = new ReiLexer(source);
+List<Token> tokens = lexer.tokenize();
+ReiParser parser = new ReiParser(tokens);
+List<Stmt> stmts = parser.parse();
+ReiInterpreter interpreter = new ReiInterpreter();
+for (Stmt stmt : stmts) {
+    interpreter.execute(stmt);
+}
+```
+
 
 ## 🧠 Syntax & Examples
 
@@ -72,19 +130,6 @@ rei_lang/
 ├── Main.java
 ```
 
----
-
-## 🚀 Getting Started
-
-### Compile:
-```bash
-javac -d . rei/*.java Main.java
-```
-
-### Run:
-```bash
-java Main path/to/script.rei
-```
 
 
 ## 🔮 Future Work
