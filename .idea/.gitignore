@@ -1,5 +1,35 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Environment-dependent path to Maven home directory
-/mavenHomeManager.xml
+# IntelliJ project files
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Output directories
+out/
+build/
+bin/
+target/
+
+# Java JAR and compiled outputs
+*.jar
+*.war
+*.ear
+
+# OS-specific files
+.DS_Store         # macOS
+Thumbs.db         # Windows
+
+# IDE crash reports
+hs_err_pid*
+
+# Example files (optional, if auto-generated or temp)
+*.rei
